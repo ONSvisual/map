@@ -86,7 +86,7 @@
 // This time using the jenks breaks we've defined		
 	color = d3.scale.threshold()
 		.domain(breaks.slice(1,5))
-		.range(['rgb(237,248,251)','rgb(178,226,226)','rgb(102,194,164)','rgb(44,162,95)','rgb(0,109,44)']);
+		.range(['rgb(237,248,251)','rgb(179,205,227)','rgb(140,150,198)','rgb(136,86,167)','rgb(129,15,124)']);
 
 
 	d3.select("#map").select("svg").remove();
@@ -289,7 +289,7 @@ function zoom_by(factor){
 	
 		var color = d3.scale.threshold()
 		   .domain(newbreaks)
-		   .range(['rgb(237,248,251)','rgb(178,226,226)','rgb(102,194,164)','rgb(44,162,95)','rgb(0,109,44)']);
+		   .range(['rgb(237,248,251)','rgb(179,205,227)','rgb(140,150,198)','rgb(136,86,167)','rgb(129,15,124)']);
 
 		y = d3.scale.linear()
 		    .domain([newbreaks[0], breaks[5]]) /*range for data*/
