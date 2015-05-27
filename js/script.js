@@ -19,7 +19,7 @@
 		.on("zoom", zoomed);
 	// Load your topojson file & CSV file
 	
-		
+	
 	queue()
 		.defer(d3.json, "assets/geog.json")
 		.defer(d3.json, "assets/config.json")
@@ -35,6 +35,8 @@
 		config2 = config;
 		
 		dvc.curr = config.ons.varload;
+		dvc.colour = eval("colorbrewer." + config.ons.varcolour);
+		
 		
 		var IE = (!! window.ActiveXObject && +(/msie\s(\d+)/i.exec(navigator.userAgent)[1])) || NaN;
 		if (IE != 9) {
@@ -86,7 +88,7 @@
 // This time using the jenks breaks we've defined		
 	color = d3.scale.threshold()
 		.domain(breaks.slice(1,5))
-		.range(['rgb(237,248,251)','rgb(179,205,227)','rgb(140,150,198)','rgb(136,86,167)','rgb(129,15,124)']);
+		.range(dvc.colour);
 
 
 	d3.select("#map").select("svg").remove();
@@ -214,7 +216,7 @@ function zoom_by(factor){
 		// This time using the jenks breaks we've defined		
 		color = d3.scale.threshold()
 			.domain(breaks.slice(1,5))
-			.range(['rgb(237,248,251)','rgb(178,226,226)','rgb(102,194,164)','rgb(44,162,95)','rgb(0,109,44)']);
+			.range(dvc.colour);
 		
 	
 		d3.select("#key").select("svg").remove();
@@ -289,7 +291,7 @@ function zoom_by(factor){
 	
 		var color = d3.scale.threshold()
 		   .domain(newbreaks)
-		   .range(['rgb(237,248,251)','rgb(179,205,227)','rgb(140,150,198)','rgb(136,86,167)','rgb(129,15,124)']);
+		   .range(dvc.colour);
 
 		y = d3.scale.linear()
 		    .domain([newbreaks[0], breaks[5]]) /*range for data*/

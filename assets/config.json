@@ -1,5 +1,6 @@
 {"ons":{
 "varlabel": ["Male Healthy Life Expectancy at Birth","Female Healthy Life Expectancy at Birth"],
+"varcolour": "BuPu[5]",
 "varname": ["male","female"],
 "varload": "male",
 "varunit":[" years of healthy life"," years of healthy life"],
