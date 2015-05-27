@@ -669,7 +669,7 @@
         // the lower_class_limits matrix is used as indexes into itself
         // here: the `k` variable is reused in each iteration.
         while (countNum > 1) {
-            kclass[countNum - 1] = Math.round(data[lower_class_limits[k][countNum] - 2]);
+            kclass[countNum - 1] = data[lower_class_limits[k][countNum] - 2];
             k = lower_class_limits[k][countNum] - 1;
             countNum--;
         }

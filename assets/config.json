@@ -1,0 +1,9 @@
+{"ons":{
+"varlabel": ["Male Healthy Life Expectancy at Birth","Female Healthy Life Expectancy at Birth"],
+"varname": ["male","female"],
+"varload": "male",
+"varunit":[" years"," years"],
+"varprefix":["",""],
+"average":[63.5,63.8],
+"averagelabel":"Eng Average"
+}}
